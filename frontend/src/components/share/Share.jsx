@@ -34,6 +34,7 @@ export default class Share extends Component {
                                 <span className='shareOptionText'>Feelings</span>
                             </div>
                         </div>
+                        <button className="shareButton">Share</button>
                     </div>
                 </div>
             </div>

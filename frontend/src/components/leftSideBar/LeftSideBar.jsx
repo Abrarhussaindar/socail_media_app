@@ -14,6 +14,8 @@ import SchoolIcon from '@mui/icons-material/School';
 
 
 import React, { Component } from 'react'
+import CloseFriend from "../closeFriend/closeFriend";
+import { Users } from '../../dummyData';
 
 export default class LeftSideBar extends Component {
     constructor(props) {
@@ -93,26 +95,7 @@ export default class LeftSideBar extends Component {
 
 
                             <ul className="leftSideBarFriendList">
-                                <li className="leftSideBarFriend">
-                                    <img className="leftSideBarFriendImage" src="/assets/me.jpg" alt="" />
-                                    <span className="leftSideBarFriendName">John Doe</span>
-                                </li>
-                                <li className="leftSideBarFriend">
-                                    <img className="leftSideBarFriendImage" src="/assets/me.jpg" alt="" />
-                                    <span className="leftSideBarFriendName">John Doe</span>
-                                </li>
-                                <li className="leftSideBarFriend">
-                                    <img className="leftSideBarFriendImage" src="/assets/me.jpg" alt="" />
-                                    <span className="leftSideBarFriendName">John Doe</span>
-                                </li>
-                                <li className="leftSideBarFriend">
-                                    <img className="leftSideBarFriendImage" src="/assets/me.jpg" alt="" />
-                                    <span className="leftSideBarFriendName">John Doe</span>
-                                </li>
-                                <li className="leftSideBarFriend">
-                                    <img className="leftSideBarFriendImage" src="/assets/me.jpg" alt="" />
-                                    <span className="leftSideBarFriendName">John Doe</span>
-                                </li>
+                            {Users.map((u) => (<CloseFriend key={u.id} user={u} />))}
                             </ul>
                         </ul>
                     </div>

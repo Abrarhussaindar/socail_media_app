@@ -1,3 +1,66 @@
 .rightSideBarContainer {
-  flex: 4;
+  flex: 3.5;
+}
+.rightSideBarContainer .rightSideBarWrapper {
+  padding: 20px 20px 0 0;
+}
+.rightSideBarContainer .rightSideBarWrapper .birthdayContainer {
+  display: flex;
+  align-items: center;
+}
+.rightSideBarContainer .rightSideBarWrapper .birthdayContainer .birthdayIcon {
+  font-size: 35px;
+  margin-right: 10px;
+}
+.rightSideBarContainer .rightSideBarWrapper .birthdayContainer .birthdayText {
+  font-size: 14px;
+  font-weight: 300;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightSideBarAd {
+  margin-top: 20px;
+  width: 70%;
+  margin: 30px 0;
+}
+.rightSideBarContainer .rightSideBarWrapper .onlineContainer .onlineContainerTitleText {
+  margin-bottom: 20px;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarInfo {
+  margin-bottom: 30px;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarInfo .rightBarInfoItem {
+  margin-bottom: 10px;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarInfo .rightBarInfoItem .rightBarInfoKey {
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarInfo .rightBarInfoItem .rightBarInfoValue {
+  font-weight: 400;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings .rightBarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings .rightBarFollowing .rightBarFollowingImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings .rightBarFollowing .rightBarFollowingName {
+  margin-top: 5px;
 }/*# sourceMappingURL=rightsidebar.css.map */

@@ -1,0 +1,76 @@
+.post {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 20px 0;
+}
+.post .postWrapper {
+  padding: 15px;
+}
+.post .postWrapper .postTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post .postWrapper .postTop .postTopLeftSide {
+  display: flex;
+  align-items: center;
+}
+.post .postWrapper .postTop .postTopLeftSide .postProfileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post .postWrapper .postTop .postTopLeftSide .postUsername {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+.post .postWrapper .postTop .postTopLeftSide .postDate {
+  font-size: 12px;
+  color: gray;
+}
+.post .postWrapper .postCenter {
+  margin: 20px 0;
+}
+.post .postWrapper .postCenter .postImage {
+  margin-top: 20px;
+  width: 100%;
+  max-height: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.post .postWrapper .postBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post .postWrapper .postBottom .postBottomLeftSide {
+  display: flex;
+  align-items: center;
+}
+.post .postWrapper .postBottom .postBottomLeftSide .postBottomLeftSideThumbIcon, .post .postWrapper .postBottom .postBottomLeftSide .postBottomLeftSideHeartIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.post .postWrapper .postBottom .postBottomLeftSide .postBottomLeftSideThumbIcon:hover {
+  color: #0585ca;
+  transition: all 0.2s ease-in-out;
+}
+.post .postWrapper .postBottom .postBottomLeftSide .postBottomLeftSideHeartIcon:hover {
+  color: #d41919;
+  transition: all 0.2s ease-in-out;
+}
+.post .postWrapper .postBottom .postBottomLeftSide .postLikeCounter {
+  font-size: 14px;
+}
+.post .postWrapper .postBottom .postBottomRightSide .postCommentText {
+  font-size: 14px;
+  margin-right: 10px;
+  border-bottom: 1px dashed gray;
+  cursor: pointer;
+}/*# sourceMappingURL=post.css.map */

@@ -24,7 +24,7 @@
                 border: none;
                 width: 80%;
                 height: 30px;
-
+                font-size: 16px;
                 &:focus{
                     outline: none;
                 }
@@ -50,15 +50,31 @@
                     margin-right: 15px;
                     cursor: pointer;
 
+
                     .shareIcon{
-                        font-size: 18px;
+                        font-size: 22px;
                         margin-right: 5px;
                     }
 
                     .shareOptionText{
-                        font-size: 14px;
+                        font-size: 16px;
                         font-weight: 500;
                     }
+                }
+            }
+
+            .shareButton{
+                border: none;
+                padding: 7px 15px;
+                border-radius: 5px;
+                background-color: green;
+                color: white;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-right: 20px;
+                &:hover{
+                    background-color: #0585ca;
                 }
             }
         }

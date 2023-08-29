@@ -23,6 +23,7 @@
   border: none;
   width: 80%;
   height: 30px;
+  font-size: 16px;
 }
 .share .shareWrapper .shareTop .shareInput:focus {
   outline: none;
@@ -46,10 +47,24 @@
   cursor: pointer;
 }
 .share .shareWrapper .shareBottom .shareOptions .shareOption .shareIcon {
-  font-size: 18px;
+  font-size: 22px;
   margin-right: 5px;
 }
 .share .shareWrapper .shareBottom .shareOptions .shareOption .shareOptionText {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
+}
+.share .shareWrapper .shareBottom .shareButton {
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+}
+.share .shareWrapper .shareBottom .shareButton:hover {
+  background-color: #0585ca;
 }/*# sourceMappingURL=share.css.map */

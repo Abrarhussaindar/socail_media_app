@@ -5,6 +5,8 @@
   padding-left: 30px;
   padding-top: 20px;
   overflow-y: scroll;
+  position: sticky;
+  top: 60px;
 }
 .leftSideBarContainer .leftSideBarContent {
   margin-bottom: 20px;
@@ -35,20 +37,6 @@
   padding: 0;
   margin: 0;
   list-style: none;
-}
-.leftSideBarContainer .leftSideBarContent .leftSideBarList .leftSideBarFriendList .leftSideBarFriend {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.leftSideBarContainer .leftSideBarContent .leftSideBarList .leftSideBarFriendList .leftSideBarFriend .leftSideBarFriendImage {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-  margin-right: 15px;
 }
 .leftSideBarContainer .leftSideBarContent .see_more_list, .leftSideBarContainer .leftSideBarContent .upArrow {
   display: none;
