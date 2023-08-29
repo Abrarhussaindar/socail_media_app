@@ -1,0 +1,75 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login .loginWrapper {
+  width: 70%;
+  height: 70%;
+  display: flex;
+}
+.login .loginWrapper .loginLeftSide, .login .loginWrapper .loginRightSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login .loginWrapper .loginLeftSide .loginLogo {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #1775ee;
+}
+.login .loginWrapper .loginLeftSide .loginDesc {
+  font-size: 24px;
+  padding-right: 25px;
+}
+.login .loginWrapper .loginRightSide .loginBox {
+  height: 300px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login .loginWrapper .loginRightSide .loginBox .loginInput {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding-left: 20px;
+  font-size: 18px;
+}
+.login .loginWrapper .loginRightSide .loginBox .loginInput:focus {
+  outline: none;
+}
+.login .loginWrapper .loginRightSide .loginBox .loginBtn {
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #1775ee;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.login .loginWrapper .loginRightSide .loginBox .loginForgot {
+  text-align: center;
+  color: #1775ee;
+  cursor: pointer;
+}
+.login .loginWrapper .loginRightSide .loginBox .loginRegisterBtn {
+  width: 60%;
+  align-self: center;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #42c72a;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}/*# sourceMappingURL=login.css.map */

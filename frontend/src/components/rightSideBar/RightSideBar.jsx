@@ -83,7 +83,7 @@ export default class RightSideBar extends Component {
         return (
             <div className='rightSideBarContainer'>
                 <div className="rightSideBarWrapper">
-                    <this.ProfileRightBar />
+                    { this.props.profile ? <this.ProfileRightBar /> : <this.HomeRightBar /> }
                 </div>
             </div>
         )
