@@ -1,8 +1,12 @@
 const router = require('express').Router();
+const UserController = require('../controllers/user.controllers');
 
-router.get("/", (req, res) => {
-    res.send('Hey its user route');
-});
+router.post("/create", UserController.Createuser);
+router.get("/:id", UserController.Getuser);
+router.put("/:id", UserController.Updateuser);
+router.delete("/:id", UserController.Deleteuser);
+router.put("/:id/follow", UserController.Followuser);
+router.put("/:id/unfollow", UserController.Unfollowuser);
 
 
 module.exports = router;

@@ -7,10 +7,10 @@ const morgan = require('morgan');
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 
-require('dotenv').config();
+const url = "mongodb+srv://admin:admin123@socailmediaappdb.4kp6w8r.mongodb.net/?retryWrites=true&w=majority"
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -27,8 +27,10 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan('common'));
 
-app.use('/api/user', userRoute);
-app.use('/api/auth', authRoute);
+
+
+app.use("/api/user", userRoute);
+app.use("/api/auth", authRoute);
 
 app.listen(8800, () => {
     console.log('Backend server is running! on 8800');
