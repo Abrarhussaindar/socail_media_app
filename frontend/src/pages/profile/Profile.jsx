@@ -27,7 +27,7 @@ export default class Profile extends Component {
                             </div>
                         </div>
                         <div className="profileRightBottom">
-                            <Feed />
+                            <Feed username="abrar123456"/>
                             <RightSideBar profile/>
                         </div>
                     </div>

@@ -8,7 +8,8 @@ router.delete("/:id", PostController.Deletepost);
 router.put("/:id/like", PostController.LikeDislikePost);
 router.put("/:id/comment", PostController.CommentUncommentPost);
 router.get("/:id", PostController.GetPost);
-router.get("/timeline/all", PostController.GetTimelinePost);
+router.get("/timeline/:userId", PostController.GetTimelinePost);
+router.get("/profile/:username", PostController.GetUserPosts);
 
 
 module.exports = router;

@@ -4,14 +4,23 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-import { Users } from '../../dummyData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from "axios";
+import { Link } from 'react-router-dom';
 
 export default function Post({post}) {
-    const [like, setLike] = useState(post.likes)
+    const [like, setLike] = useState(post.likes.length)
     const [isLiked, setIsLiked] = useState(false)
+    const [user, setUser] = useState({})
+    
+    useEffect(() => {
+        const fetchUser = async () => {
+            const res = await axios.get(`/user/${post.userId}`);
+            setUser(res.data);
+        };
+        fetchUser();
+    }, [post.userId]);
 
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const likeHandler = () => {
         setLike(isLiked ? like-1 : like+1)
         document.querySelector('.postBottomLeftSideThumbIcon').style.color = isLiked ? 'black' : '#0585ca'
@@ -23,9 +32,11 @@ export default function Post({post}) {
         <div className="postWrapper">
             <div className="postTop">
                 <div className="postTopLeftSide">
-                    <img className="postProfileImg" src={Users.filter((u) => u.id === post.user_id)[0].profileImage} alt="" />
-                    <span className="postUsername">{Users.filter((u) => u.id === post.user_id)[0].username}</span>
-                    <span className="postDate">{post.date}</span>
+                    <Link to={`profile/${user.username}`} style={{textDecoration: 'none'}}>
+                    <img className="postProfileImg" src={user.profilePicture} alt="" />
+                    </Link>
+                    <span className="postUsername">{user.username}</span>
+                    <span className="postDate">{post.createdAt}</span>
                 </div>
                 <div className="postTopRightSide">
                     <MoreVertIcon className='postTopRigtSideIcon' />
@@ -33,7 +44,7 @@ export default function Post({post}) {
             </div>
             <div className="postCenter">
                 <span className="postText">{post?.desc}</span>
-                <img src={PF+post.photo} alt="post_img" className="postImage" />
+                <img src={post.image} alt="post_img" className="postImage" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeftSide">
@@ -42,7 +53,7 @@ export default function Post({post}) {
                     <span className="postLikeCounter">{like} People like it...</span>
                 </div>
                 <div className="postBottomRightSide">
-                    <span className="postCommentText">{post.comments} Comments</span>
+                    <span className="postCommentText">{post.comments.length} Comments</span>
                 </div>
             </div>
         </div>

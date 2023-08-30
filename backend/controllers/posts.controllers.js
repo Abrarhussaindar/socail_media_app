@@ -83,7 +83,7 @@ const GetPost = async (req, res) => {
 
 const GetTimelinePost = async (req, res) => {
     try{
-        const currentUser = await User.findById(req.body.userId);
+        const currentUser = await User.findById(req.params.userId);
         const userPosts = await Post.find({ userId: currentUser._id });
         const friendPosts = await Promise.all(
             currentUser.followings.map((friendId) => {
@@ -96,9 +96,20 @@ const GetTimelinePost = async (req, res) => {
     }
 }
 
+const GetUserPosts = async (req, res) => {
+    try{
+        const user = await User.findOne({username:req.params.username});
+        const posts = await Post.find({ userId: user._id });
+        res.status(200).json(posts);
+    }catch(err){
+        res.status(500).json(err);
+    }
+}
+
+
 
 
 // exporting all controllers
 module.exports = {
-    Createpost, Updatepost, Deletepost, LikeDislikePost, CommentUncommentPost, GetPost, GetTimelinePost,
+    Createpost, Updatepost, Deletepost, LikeDislikePost, CommentUncommentPost, GetPost, GetUserPosts, GetTimelinePost,
 }
