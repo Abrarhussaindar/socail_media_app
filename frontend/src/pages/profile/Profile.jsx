@@ -7,6 +7,8 @@ import Navbar from "../../components/navbar/Navbar"
 import RightSideBar from "../../components/rightSideBar/RightSideBar"
 
 export default class Profile extends Component {
+
+    PF = process.env.REACT_APP_PUBLIC_FOLDER
     render() {
         return (
             <div>
@@ -16,8 +18,8 @@ export default class Profile extends Component {
                     <div className="profileRightSide">
                         <div className="profileRightTop">
                             <div className="profileCoverContainer">
-                                <img className='profileCoverImage' src="/assets/me.jpg" width="50px" alt="" />
-                                <img className='profileUserImage' src="/assets/me.jpg" width="50px" alt="" />
+                                <img className='profileCoverImage' src={this.PF+"me.jpg"} width="50px" alt="" />
+                                <img className='profileUserImage' src={this.PF+"me.jpg"} width="50px" alt="" />
                             </div>
                             <div className="profileInfo">
                                 <h4 className="profileInfoName">Abrar Hussain</h4>

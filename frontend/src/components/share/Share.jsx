@@ -6,12 +6,13 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 
 export default class Share extends Component {
+    PF = process.env.REACT_APP_PUBLIC_FOLDER
     render() {
         return (
             <div className='share'>
                 <div className="shareWrapper">
                     <div className="shareTop">
-                        <img src="/assets/me.jpg" alt="img" />
+                        <img src= {this.PF+"me.jpg"} alt="img" />
                         <input placeholder="what's in your mind ?..." className='shareInput' />
                     </div>
                     <hr className='shareHr' />

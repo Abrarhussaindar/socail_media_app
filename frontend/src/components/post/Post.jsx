@@ -11,6 +11,7 @@ export default function Post({post}) {
     const [like, setLike] = useState(post.likes)
     const [isLiked, setIsLiked] = useState(false)
 
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const likeHandler = () => {
         setLike(isLiked ? like-1 : like+1)
         document.querySelector('.postBottomLeftSideThumbIcon').style.color = isLiked ? 'black' : '#0585ca'
@@ -32,7 +33,7 @@ export default function Post({post}) {
             </div>
             <div className="postCenter">
                 <span className="postText">{post?.desc}</span>
-                <img src={post.photo} alt="post_img" className="postImage" />
+                <img src={PF+post.photo} alt="post_img" className="postImage" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeftSide">

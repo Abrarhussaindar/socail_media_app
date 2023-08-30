@@ -10,7 +10,9 @@
     z-index: 3;
     .navLeftSide{
         flex: 3;
-
+        .logoLink{
+            text-decoration: none;
+        }
         .navLogo{
             font-size: 20px;
             color: white;

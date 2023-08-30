@@ -2,17 +2,17 @@ export const Users = [
     {
         id: 1,
         username: "user1",
-        profileImage: "/assets/me.jpg",
+        profileImage: "me.jpg",
     },
     {
         id: 2,
         username: "user2",
-        profileImage: "/assets/me.jpg",
+        profileImage: "me.jpg",
     },
     {
         id: 3,
         username: "user3",
-        profileImage: "/assets/me.jpg",
+        profileImage: "me.jpg",
     },
 ]
 
@@ -20,7 +20,7 @@ export const Posts =[
     {
         id: 1,
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        photo: "/assets/img1.jpg",
+        photo: "img1.jpg",
         date: "5 mins ago",
         user_id: 1,
         likes: 12,
@@ -30,7 +30,7 @@ export const Posts =[
     {
         id: 2,
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        photo: "/assets/img2.jpg",
+        photo: "img2.jpg",
         date: "15 mins ago",
         user_id: 2,
         likes: 15,
@@ -40,7 +40,7 @@ export const Posts =[
     {
         id: 3,
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        photo: "/assets/img3.webp",
+        photo: "img3.webp",
         date: "25 mins ago",
         user_id: 3,
         likes: 34,

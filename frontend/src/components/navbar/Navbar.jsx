@@ -5,7 +5,7 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import PersonIcon from '@mui/icons-material/Person';
 
 import React, { Component } from 'react'
-
+import { Link } from "react-router-dom";
 export default class Navbar extends Component {
     constructor(props) {
         super(props)
@@ -18,9 +18,11 @@ export default class Navbar extends Component {
         return (
             <div className="navContainer">
                 <div className="navLeftSide">
-                    <div className="navLogo">
-                        Social Media App
-                    </div>
+                    <Link to="/" className="logoLink">
+                        <span className="navLogo">
+                            Social Media App
+                        </span>
+                    </Link>
                 </div>
                 <div className="navCenter">
                     <div className="navSearchBar">

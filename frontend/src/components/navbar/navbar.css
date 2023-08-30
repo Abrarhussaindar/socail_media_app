@@ -12,6 +12,9 @@
 .navContainer .navLeftSide {
   flex: 3;
 }
+.navContainer .navLeftSide .logoLink {
+  text-decoration: none;
+}
 .navContainer .navLeftSide .navLogo {
   font-size: 20px;
   color: white;
