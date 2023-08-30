@@ -62,6 +62,10 @@
                     font-size: 20px;
                     font-weight: 500;
                     cursor: pointer;
+
+                    &:disabled{
+                        cursor: not-allowed;
+                    }
                 }
                 .loginForgot{
                     text-align: center;

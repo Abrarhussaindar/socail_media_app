@@ -56,6 +56,9 @@
   font-weight: 500;
   cursor: pointer;
 }
+.login .loginWrapper .loginRightSide .loginBox .loginBtn:disabled {
+  cursor: not-allowed;
+}
 .login .loginWrapper .loginRightSide .loginBox .loginForgot {
   text-align: center;
   color: #1775ee;
