@@ -2,7 +2,7 @@ const router = require('express').Router();
 const UserController = require('../controllers/user.controllers');
 
 router.post("/create", UserController.Createuser);
-router.get("/:id", UserController.Getuser);
+router.get("/", UserController.Getuser);
 router.put("/:id", UserController.Updateuser);
 router.delete("/:id", UserController.Deleteuser);
 router.put("/:id/follow", UserController.Followuser);

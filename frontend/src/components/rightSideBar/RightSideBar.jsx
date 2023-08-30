@@ -7,7 +7,6 @@ import { Users } from '../../dummyData';
 export default class RightSideBar extends Component {
     constructor(props) {
         super(props)
-        
         this.state = {
         }
     }
@@ -36,15 +35,15 @@ export default class RightSideBar extends Component {
                 <div className="rightBarInfo">
                     <div className="rightBarInfoItem">
                         <span className="rightBarInfoKey">City: </span>
-                        <span className="rightBarInfoValue">Srinagar</span>
+                        <span className="rightBarInfoValue">{this.props.user.city}</span>
                     </div>
                     <div className="rightBarInfoItem">
                         <span className="rightBarInfoKey">From: </span>
-                        <span className="rightBarInfoValue">Hawal</span>
+                        <span className="rightBarInfoValue">{this.props.user.from}</span>
                     </div>
                     <div className="rightBarInfoItem">
                         <span className="rightBarInfoKey">Relationship: </span>
-                        <span className="rightBarInfoValue">Single</span>
+                        <span className="rightBarInfoValue">{this.props.user.relationship === 1 ? "Single" : this.props.user.relationship === 2 ? "Married" : "-" }</span>
                     </div>
                 </div>
 
@@ -83,7 +82,7 @@ export default class RightSideBar extends Component {
         return (
             <div className='rightSideBarContainer'>
                 <div className="rightSideBarWrapper">
-                    { this.props.profile ? <this.ProfileRightBar /> : <this.HomeRightBar /> }
+                    { this.props.user ? <this.ProfileRightBar /> : <this.HomeRightBar /> }
                 </div>
             </div>
         )
