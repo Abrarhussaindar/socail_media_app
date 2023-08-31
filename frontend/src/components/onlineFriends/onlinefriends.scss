@@ -17,9 +17,10 @@
                 height: 45px;
                 border-radius: 50%;
                 object-fit: cover;
+                cursor: pointer;
             }
 
-            .online{
+            .activeIndicator{
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
@@ -29,10 +30,17 @@
                 right: 0;
                 border: 2px solid white;
             }
+            .online{
+                background-color: limegreen !important;
+            }
+            .offline{
+                background-color: red !important;
+            }
         }
 
         .onlineUserName{
             font-weight: 500;
+            cursor: pointer;
         }
     }
 }

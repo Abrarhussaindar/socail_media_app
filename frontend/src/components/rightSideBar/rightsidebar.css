@@ -47,20 +47,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings .rightBarFollowing {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings .rightBarFollowing .rightBarFollowingImg {
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.rightSideBarContainer .rightSideBarWrapper .rightBarFollowings .rightBarFollowing .rightBarFollowingName {
-  margin-top: 5px;
+  gap: 5px;
 }/*# sourceMappingURL=rightsidebar.css.map */

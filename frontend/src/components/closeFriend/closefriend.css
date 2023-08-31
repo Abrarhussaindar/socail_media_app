@@ -11,4 +11,7 @@
      object-fit: cover;
   cursor: pointer;
   margin-right: 15px;
+}
+.leftSideBarFriend .leftSideBarFriendName {
+  cursor: pointer;
 }/*# sourceMappingURL=closefriend.css.map */

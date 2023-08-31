@@ -55,21 +55,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            .rightBarFollowing{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 20px;
-                cursor: pointer;
-                .rightBarFollowingImg{
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 5px;
-                    object-fit: cover;
-                }
-                .rightBarFollowingName{
-                    margin-top: 5px;
-                }
-            }
+            gap: 5px;
         }
     }
 }

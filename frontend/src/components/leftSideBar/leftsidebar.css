@@ -33,6 +33,10 @@
   padding: 10px 20px;
   cursor: pointer;
 }
+.leftSideBarContainer .leftSideBarContent .leftSideBarList .leftSideBarTitle {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
 .leftSideBarContainer .leftSideBarContent .leftSideBarList .leftSideBarFriendList {
   padding: 0;
   margin: 0;

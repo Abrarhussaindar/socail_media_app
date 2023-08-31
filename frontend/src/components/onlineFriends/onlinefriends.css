@@ -18,8 +18,9 @@
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
-.onlineFriendList .onlineFriend .onlineFriendProfileImageContainer .online {
+.onlineFriendList .onlineFriend .onlineFriendProfileImageContainer .activeIndicator {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -29,6 +30,13 @@
   right: 0;
   border: 2px solid white;
 }
+.onlineFriendList .onlineFriend .onlineFriendProfileImageContainer .online {
+  background-color: limegreen !important;
+}
+.onlineFriendList .onlineFriend .onlineFriendProfileImageContainer .offline {
+  background-color: red !important;
+}
 .onlineFriendList .onlineFriend .onlineUserName {
   font-weight: 500;
+  cursor: pointer;
 }/*# sourceMappingURL=onlinefriends.css.map */

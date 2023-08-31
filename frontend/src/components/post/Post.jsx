@@ -7,21 +7,21 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import { format } from 'timeago.js';
 
 export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length)
     const [isLiked, setIsLiked] = useState(false)
     const [user, setUser] = useState({})
-    
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`/user?userId=${post.userId}`);
+            const res = await axios.get(`/user?id=${post.userId}`);
             setUser(res.data);
         };
         fetchUser();
     }, [post.userId]);
 
-
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const likeHandler = () => {
         setLike(isLiked ? like-1 : like+1)
         document.querySelector('.postBottomLeftSideThumbIcon').style.color = isLiked ? 'black' : '#0585ca'
@@ -33,11 +33,14 @@ export default function Post({post}) {
         <div className="postWrapper">
             <div className="postTop">
                 <div className="postTopLeftSide">
-                    <Link to={`profile/${user.username}`} style={{textDecoration: 'none'}}>
-                    <img className="postProfileImg" src={user.profilePicture} alt="" />
+                    <Link to={`profile/${user._id}`} style={{textDecoration: 'none'}}>
+                        <img className="postProfileImg" src={user.profilePicture 
+                        ? PF+user.profilePicture
+                        : PF+'noAvatar.png' 
+                        } alt="" />
                     </Link>
                     <span className="postUsername">{user.username}</span>
-                    <span className="postDate">{post.createdAt}</span>
+                    <span className="postDate">{format(post.createdAt)}</span>
                 </div>
                 <div className="postTopRightSide">
                     <MoreVertIcon className='postTopRigtSideIcon' />
@@ -45,7 +48,7 @@ export default function Post({post}) {
             </div>
             <div className="postCenter">
                 <span className="postText">{post?.desc}</span>
-                <img src={post.image} alt="post_img" className="postImage" />
+                <img src={post?.image} alt="post_img" className="postImage" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeftSide">
