@@ -4,15 +4,17 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import { format } from 'timeago.js';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length)
     const [isLiked, setIsLiked] = useState(false)
     const [user, setUser] = useState({})
+    const {user: currentUser} = useContext(AuthContext);
     useEffect(() => {
         const fetchUser = async () => {
             const res = await axios.get(`/user?id=${post.userId}`);
@@ -21,11 +23,19 @@ export default function Post({post}) {
         fetchUser();
     }, [post.userId]);
 
+    useEffect(() => {
+        setIsLiked(post.likes.includes(currentUser._id))
+    }, [currentUser._id, post.likes])
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const likeHandler = () => {
+        try{
+            axios.put('/posts/'+post._id+'/like', {userId: currentUser._id})
+        }catch(err){
+            console.log(err) 
+        }
         setLike(isLiked ? like-1 : like+1)
-        document.querySelector('.postBottomLeftSideThumbIcon').style.color = isLiked ? 'black' : '#0585ca'
-        document.querySelector('.postBottomLeftSideHeartIcon').style.color = isLiked ? 'black' : '#d41919'
+        document.querySelector('.postBottomLeftSideThumbIcon').style.color = isLiked ? 'black' : "#0585ca"
+        document.querySelector('.postBottomLeftSideHeartIcon').style.color = isLiked ? 'black' : "#d41919"
         setIsLiked(!isLiked)
     }
     return (
@@ -48,7 +58,7 @@ export default function Post({post}) {
             </div>
             <div className="postCenter">
                 <span className="postText">{post?.desc}</span>
-                <img src={post?.image} alt="post_img" className="postImage" />
+                <img src={post.image ? PF+post.image : "."} alt="post_img" className="postImage" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeftSide">

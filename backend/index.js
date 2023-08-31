@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
+const multer = require('multer');
 
 const url = "mongodb+srv://admin:admin123@socailmediaappdb.4kp6w8r.mongodb.net/?retryWrites=true&w=majority"
 
@@ -28,6 +29,24 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan('common'));
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "./public/images")
+    }, 
+    filename: (req, file, cb) => {
+        cb(null, req.body.name)
+    }
+});
+console.log("st: ",storage.destination)
+const upload = multer(storage);
+app.post('/api/upload', upload.single("file"), (req, res) => {
+    console.log("st: ",storage.destination)
+    try{
+        return res.status(200).json("File uploaded successfully");
+    }catch(err){
+        res.status(500).json(err);
+    } 
+});
 
 
 app.use("/api/user", userRoute);
