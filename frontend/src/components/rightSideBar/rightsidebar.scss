@@ -4,6 +4,7 @@
     .rightSideBarWrapper{
         padding: 20px 20px 0 0;
 
+
         .birthdayContainer{
             display: flex;
             align-items: center;
@@ -28,6 +29,30 @@
             .onlineContainerTitleText{
                 margin-bottom: 20px;
             }
+        }
+
+        .rightBarFollowBtn{
+            margin: 30px 0 10px 0;
+            border: none;
+            background-color: #1872f2;
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            .addIcon{
+                font-size: 20px;
+                margin-left: 5px;
+            }
+
+
+            .rightBarFollowBtn:focus{
+                outline: none;
+            }
+
         }
 
         .rightBarTitle{

@@ -16,22 +16,17 @@ export default function Feed(props) {
             ? await axios.get("/posts/profile/"+ props.username)
             : await axios.get("/posts/timeline/"+user._id);
 
-            setPost(res.data);
+            setPost(res.data.sort((p1, p2) => {
+                return new Date(p2.createdAt) - new Date(p1.createdAt);
+            }));
         };
         fetchPost();
     }, [props.username, user._id]);
 
-    const TimelineTitle = () => {
-        return (
-            <div className="timelineHeadtitle">
-                <h3 className="tt">{props.username}'s Timeline : </h3>
-            </div>
-        )
-    }
     return (
         <div className='feedContainer'>
             <div className="feedWrapper">
-                {props.username ? <TimelineTitle /> : <Share />}
+                {props.username ? <p className="tt">{props.username}'s Timeline : </p>  : <Share />}
                 {posts.map((p) => (
                     <Post key={p._id} post={p} />
                 ))}

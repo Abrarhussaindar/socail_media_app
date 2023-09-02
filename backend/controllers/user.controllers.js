@@ -78,6 +78,26 @@ const Getuser = async (req, res) => {
     }
 }
 
+const GetOnlineFriends = async (req, res) => {
+    const _id = req.params.id;
+    try{
+        const user = await User.findById(_id)
+        const friends = await Promise.all(
+            user.followings.map(friendId => {
+                return User.findById(friendId);
+            })
+        )
+        let friendList = [];
+        friends.map(friend => {
+            const { _id, username, profilePicture } = friend;
+            friendList.push({ _id, username, profilePicture });
+        })
+        res.status(200).json(friendList);
+    }catch(err){
+        res.status(500).json(err);
+    }
+}
+
 const Followuser = async (req, res) => {
     if(req.body.userId !== req.params.id){
         try{
@@ -87,9 +107,10 @@ const Followuser = async (req, res) => {
             if(!user.followers.includes(req.body.userId)){
                 await user.updateOne({ $push: { followers: req.body.userId } });
                 await currentUser.updateOne({ $push: { followings: req.params.id } });
-
+                console.log("your are now following this user: ", req.params.id);
                 res.status(200).json(`You are now following: ${req.params.id}`);
             }else{
+                console.log("you already follow this user: ", req.params.id)
                 res.status(403).json(`You already follow this user!: ${req.params.id}`);
             }
         }catch(err){
@@ -140,5 +161,5 @@ const Login = async (req, res) => {
 
 // exporting all controllers
 module.exports = {
-    Createuser, Updateuser, Deleteuser, Login, Getuser, Followuser, Unfollowuser,
+    Createuser, Updateuser, Deleteuser, Login, Getuser, GetOnlineFriends, Followuser, Unfollowuser,
 }

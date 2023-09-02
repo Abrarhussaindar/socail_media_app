@@ -5,14 +5,21 @@
   gap: 5px;
   cursor: pointer;
 }
-.rightBarFollowing .rightBarFollowingImg {
+.rightBarFollowing a {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 5px;
+  cursor: pointer;
+}
+.rightBarFollowing a .rightBarFollowingImg {
   width: 100px;
   height: 100px;
   border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.rightBarFollowing .rightBarFollowingName {
-  align-items: center;
+.rightBarFollowing a .rightBarFollowingName {
+  text-align: center;
   margin-top: 5px;
 }/*# sourceMappingURL=userfriends.css.map */

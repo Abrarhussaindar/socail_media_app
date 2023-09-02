@@ -38,6 +38,16 @@ export default function Post({post}) {
         document.querySelector('.postBottomLeftSideHeartIcon').style.color = isLiked ? 'black' : "#d41919"
         setIsLiked(!isLiked)
     }
+    const handleDeletePost = async () => {
+        try{
+            await axios.delete('/posts/'+post._id, {data: {userId: currentUser._id}})
+            console.log('Post deleted successfully')
+            window.location.reload()
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     return (
         <div className='post'>
         <div className="postWrapper">
@@ -53,7 +63,7 @@ export default function Post({post}) {
                     <span className="postDate">{format(post.createdAt)}</span>
                 </div>
                 <div className="postTopRightSide">
-                    <MoreVertIcon className='postTopRigtSideIcon' />
+                    <MoreVertIcon className='postTopRigtSideIcon' onClick={handleDeletePost}/>
                 </div>
             </div>
             <div className="postCenter">

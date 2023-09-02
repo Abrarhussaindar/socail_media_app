@@ -32,6 +32,9 @@
   font-size: 12px;
   color: gray;
 }
+.post .postWrapper .postTop .postTopRightSide .postTopRigtSideIcon {
+  cursor: pointer;
+}
 .post .postWrapper .postCenter {
   margin: 20px 0;
 }
