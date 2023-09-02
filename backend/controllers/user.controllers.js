@@ -4,11 +4,8 @@ const bcrypt = require('bcrypt');
 
 // user controllers
 const Createuser = async (req, res) => {
-    console.log(req.body)
     try{
         const salt = await bcrypt.genSalt(10);
-        console.log("salt: ", salt);
-        console.log("req.body.password: ", req.body.password)
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
         const newUser = new User({
@@ -107,10 +104,8 @@ const Followuser = async (req, res) => {
             if(!user.followers.includes(req.body.userId)){
                 await user.updateOne({ $push: { followers: req.body.userId } });
                 await currentUser.updateOne({ $push: { followings: req.params.id } });
-                console.log("your are now following this user: ", req.params.id);
                 res.status(200).json(`You are now following: ${req.params.id}`);
             }else{
-                console.log("you already follow this user: ", req.params.id)
                 res.status(403).json(`You already follow this user!: ${req.params.id}`);
             }
         }catch(err){

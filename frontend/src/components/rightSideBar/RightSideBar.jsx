@@ -13,7 +13,6 @@ export default function RightSideBar(props) {
     const {user, dispatch} = useContext(AuthContext);
     const [friends, setFriends] = useState([]);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
-    console.log("props", props)
     useEffect(() => {
         const getFriends = async () => {
             if(props === null){
@@ -26,7 +25,6 @@ export default function RightSideBar(props) {
             }else{
                 try{
                     const friendList = await axios.get("/user/friends/"+props.user._id);
-                    console.log(friendList.data)
                     setFriends(friendList.data);
                 }catch(err){
                     console.log(err);

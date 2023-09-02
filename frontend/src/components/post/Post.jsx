@@ -41,7 +41,6 @@ export default function Post({post}) {
     const handleDeletePost = async () => {
         try{
             await axios.delete('/posts/'+post._id, {data: {userId: currentUser._id}})
-            console.log('Post deleted successfully')
             window.location.reload()
         }catch(err){
             console.log(err)
