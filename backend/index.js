@@ -37,12 +37,12 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 // Enable CORS for all routes or specify allowed origins
 
 
-app.use("/images", express.static(path.join(__dirname, "/public/images")));
+app.use("/images", express.static(path.join(__dirname, "public", "images")));
 
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        const destinationPath = path.join(__dirname, "/public/images");
+        const destinationPath = path.join(__dirname, "public", "images");
         cb(null, destinationPath);
     },
     filename: (req, file, cb) => {
